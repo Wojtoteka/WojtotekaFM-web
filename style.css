@@ -1,22 +1,21 @@
 :root {
-    --primary-color: #7289da;
-    --secondary-color: #2c2f33;
-    --accent-color: #43b581;
-    --text-color: #ffffff;
-    --hover-color: #5865f2;
+    --primary-color: #40e0ff; /* Brighter Turquoise/Cyanish Blue */
+    --secondary-color: #101020; /* Dark Purpleish Blue */
+    --accent-color: #c550ff; /* Brighter, Lighter Purple */
+    --text-color: #e0e0e0; /* Soft White */
+    --hover-color: #70f0ff; /* Lighter version of new primary */
+    --background-color: #030308; /* Very Dark Blue/Black */
+    --accent-rgb-values: 197, 80, 255; /* RGB for accent color, used for subtle glow */
+    --card-background: rgba(64, 224, 255, 0.09); /* Based on new primary, slightly more opacity */
+    --card-hover-background: rgba(64, 224, 255, 0.18); /* Based on new primary, slightly more opacity on hover */
+    --glow-primary: 0 0 10px var(--primary-color); /* Subtler glow */
+    --glow-accent: 0 0 10px var(--accent-color); /* Subtler glow */
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    background-color: #0a0a0a;
-    color: white;
 }
 
 #particles-js {
@@ -28,19 +27,34 @@ body {
     z-index: 1;
 }
 
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    letter-spacing: 0.5px;
+}
+
 .hero {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(135deg, var(--secondary-color), #000);
+    background: linear-gradient(135deg, var(--secondary-color), var(--background-color));
     position: relative;
     z-index: 2;
 }
 
 .hero-content {
     padding: 2rem;
+}
+
+.hero-content h1 {
+    font-size: 2.8rem; /* Base font size for hero heading */
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7); /* Classic dark shadow for better readability */
 }
 
 .bot-avatar {
@@ -50,34 +64,43 @@ body {
     margin-bottom: 2rem;
     border: 4px solid var(--primary-color);
     animation: float 3s ease-in-out infinite;
+    transition: box-shadow 0.3s ease;
+}
+
+.bot-avatar:hover {
+    box-shadow: var(--glow-primary);
 }
 
 .cta-button {
     display: inline-block;
     padding: 1rem 2rem;
     background-color: var(--primary-color);
-    color: white;
+    color: var(--background-color); /* Dark text for contrast on light primary background */
     text-decoration: none;
-    border-radius: 25px;
+    border-radius: 5px; /* Sharper edges */
     font-weight: bold;
     margin-top: 2rem;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+    border: 1px solid transparent;
 }
 
 .cta-button:hover {
     transform: scale(1.05);
-    background-color: var(--accent-color);
+    background-color: var(--hover-color);
+    color: var(--secondary-color);
+    box-shadow: var(--glow-primary);
 }
 
 .features {
     padding: 4rem 2rem;
-    background-color: #111;
+    background-color: var(--secondary-color); /* Darker section background */
 }
 
 .features h2 {
     text-align: center;
     margin-bottom: 3rem;
     color: var(--accent-color);
+    text-shadow: 0 0 8px rgba(var(--accent-rgb-values), 0.5); /* Softer glow based on accent color */
 }
 
 .features-grid {
@@ -89,15 +112,19 @@ body {
 }
 
 .feature-card {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--card-background);
     padding: 2rem;
-    border-radius: 10px;
+    border-radius: 8px; /* Slightly sharper */
     text-align: center;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    border: 1px solid var(--primary-color);
 }
 
 .feature-card:hover {
     transform: translateY(-10px);
+    background: var(--card-hover-background);
+    box-shadow: var(--glow-primary);
+    border-color: var(--hover-color);
 }
 
 .feature-card i {
@@ -108,7 +135,7 @@ body {
 
 .about {
     padding: 4rem 2rem;
-    background: linear-gradient(45deg, #1a1a1a, #2c2f33);
+    background: linear-gradient(45deg, var(--background-color), var(--secondary-color));
     position: relative;
     z-index: 2;
 }
@@ -122,6 +149,7 @@ body {
 .about-content h2 {
     color: var(--accent-color);
     margin-bottom: 2rem;
+    text-shadow: 0 0 8px rgba(var(--accent-rgb-values), 0.5); /* Softer glow based on accent color */
 }
 
 .about-content p {
@@ -143,6 +171,8 @@ body {
     background: var(--primary-color);
     border-radius: 3px;
     animation: visualizer 1.5s ease-in-out infinite;
+    opacity: 0.7;
+    transform-origin: bottom; /* Added for scaleY animation */
 }
 
 .bar:nth-child(1) { animation-delay: 0.2s; }
@@ -150,11 +180,11 @@ body {
 .bar:nth-child(3) { animation-delay: 0.6s; }
 .bar:nth-child(4) { animation-delay: 0.8s; }
 .bar:nth-child(5) { animation-delay: 1.0s; }
-
+/* Changed animation to use transform: scaleY() to prevent layout shifts */
 @keyframes visualizer {
-    0% { height: 30px; }
-    50% { height: 60px; }
-    100% { height: 30px; }
+    0%   { transform: scaleY(1); opacity: 0.7; }
+    50%  { transform: scaleY(2); opacity: 1; }
+    100% { transform: scaleY(1); opacity: 0.7; }
 }
 
 .social-links {
@@ -165,33 +195,40 @@ body {
     font-size: 1.5rem;
     color: var(--primary-color);
     margin: 0 10px;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .social-link:hover {
     color: var(--hover-color);
+    transform: translateY(-3px) scale(1.1);
+    text-shadow: 0 0 5px var(--hover-color);
 }
 
 .discord-link {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    color: var(--primary-color);
+    color: var(--background-color); /* Dark text for contrast on light primary background */
     text-decoration: none;
     padding: 0.5rem 1rem;
-    border-radius: 5px;
+    border-radius: 5px; /* Consistent sharp edges */
     margin-left: 1rem;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
 }
 
 .discord-link:hover {
     background: var(--hover-color);
-    color: white;
+    color: var(--secondary-color); /* Dark text on light hover */
+    box-shadow: var(--glow-primary);
+    transform: translateY(-2px);
+    border-color: var(--hover-color);
 }
 
 .stats {
     padding: 4rem 2rem;
-    background: linear-gradient(135deg, #2c2f33, #23272a);
+    background: linear-gradient(135deg, var(--secondary-color), var(--background-color)); /* Using CSS variables */
     position: relative;
     z-index: 2;
 }
@@ -207,11 +244,18 @@ body {
 .stat-card {
     text-align: center;
     padding: 2rem;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
+    background: var(--card-background);
+    border-radius: 8px; /* Slightly sharper */
     backdrop-filter: blur(5px);
-    transform: none;
-    transition: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+    border: 1px solid var(--primary-color);
+}
+
+.stat-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--glow-primary);
+    background: var(--card-hover-background);
+    border-color: var(--hover-color);
 }
 
 .stat-card i {
@@ -237,7 +281,7 @@ body {
 footer {
     text-align: center;
     padding: 2rem;
-    background-color: #000;
+    background-color: var(--secondary-color); /* Consistent dark section bg */
     position: relative;
     z-index: 2;
 }
@@ -245,6 +289,12 @@ footer {
 footer a {
     color: var(--primary-color);
     text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--hover-color);
+    text-shadow: 0 0 5px var(--hover-color);
 }
 
 /* Animations */
@@ -295,4 +345,21 @@ footer a {
     .features-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* Custom Scrollbar for Webkit browsers */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background-color); /* Darker track */
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--hover-color);
 }
