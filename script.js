@@ -45,7 +45,20 @@ particlesJS("particles-js", {
         enable: true,
         mode: "repulse"
       },
+      onclick: {
+        enable: true,
+        mode: "push"
+      },
       resize: true
+    },
+    modes: {
+      repulse: {
+        distance: 100,
+        duration: 0.4
+      },
+      push: {
+        particles_nb: 4
+      }
     }
   },
   retina_detect: true
