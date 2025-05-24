@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WojtotekaFM - Discord Bot</title>
+    <title>WojtotekaFM - Profesjonalny Bot Radiowy dla Discord</title>
+    <link rel="icon" type="image/png" href="https://cdn.discordapp.com/app-icons/1355859655699599532/53f1e755fcb8dc090d0d008af01801c2.png?size=64">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
@@ -14,40 +15,115 @@
         <div class="hero-content animate-fade-in">
             <img src="https://cdn.discordapp.com/app-icons/1355859655699599532/53f1e755fcb8dc090d0d008af01801c2.png?size=256" alt="Radio Wojtoteka Bot" class="bot-avatar">
             <h1>WojtotekaFM</h1>
-            <p>Twoje ulubione radio teraz na Discord!</p>
+            <p>Profesjonalny bot radiowy z obsługą wielu serwerów jednocześnie!</p>
             <a href="https://discord.com/oauth2/authorize?client_id=1355859655699599532&permissions=828965423360&integration_type=0&scope=bot" 
                class="cta-button animate-pulse">
-                Dodaj do Discord
+                <i class="fas fa-plus"></i> Dodaj do Discord
+            </a>
+            <div class="social-links">
+                <a href="https://wojtoteka.ovh/" class="social-link" title="Strona główna">
+                    <i class="fas fa-globe"></i>
+                </a>
+                <a href="https://radio.wojtoteka.ovh/" class="social-link" title="Słuchaj online">
+                    <i class="fas fa-broadcast-tower"></i>
+                </a>
+            </div>
+            <a href="https://discord.com/users/1328758394588500024" class="discord-link">
+                <i class="fab fa-discord"></i> Kontakt z Dev
             </a>
         </div>
     </header>
 
     <section class="features">
-        <h2>Funkcje</h2>
+        <h2>Zaawansowane Funkcje</h2>
         <div class="features-grid">
             <div class="feature-card animate-slide-up">
-                <i class="fas fa-music"></i>
-                <h3>Radio 24/7</h3>
-                <p>Wysokiej jakości muzyka dostępna przez całą dobę</p>
+                <i class="fas fa-server"></i>
+                <h3>Multi-Server Support</h3>
+                <p>Jeden bot obsługuje nieograniczoną liczbę serwerów jednocześnie z globalnym systemem audio</p>
             </div>
             <div class="feature-card animate-slide-up">
-                <i class="fas fa-terminal"></i>
-                <h3>Proste Komendy</h3>
-                <p>/radio, /stop, /ping - wszystko czego potrzebujesz</p>
+                <i class="fas fa-sync-alt"></i>
+                <h3>Aktualizacje Na Żywo</h3>
+                <p>Informacje o aktualnie granym utworze aktualizowane co 15 sekund na wszystkich serwerach</p>
+            </div>
+            <div class="feature-card animate-slide-up">
+                <i class="fas fa-crown"></i>
+                <h3>System Premium</h3>
+                <p>Inteligentne kanały, auto-reconnect, tryb 24/7 i krótsze cooldowny dla użytkowników Premium</p>
+            </div>
+            <div class="feature-card animate-slide-up">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Bulletproof Stability</h3>
+                <p>Zaawansowane error handling, automatyczne restartowanie i graceful degradation</p>
             </div>
             <div class="feature-card animate-slide-up">
                 <i class="fas fa-chart-line"></i>
-                <h3>Status Na Żywo</h3>
-                <p>Informacje o aktualnie granym utworze</p>
+                <h3>Rich Diagnostics</h3>
+                <p>Szczegółowe logi, monitoring wydajności i diagnostyka problemów z połączeniem</p>
+            </div>
+            <div class="feature-card animate-slide-up">
+                <i class="fas fa-bolt"></i>
+                <h3>High Performance</h3>
+                <p>Optymalne zużycie zasobów dzięki globalnemu odtwarzaczowi i intelligent caching</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="commands">
+        <div class="commands-content">
+            <h2>Dostępne Komendy</h2>
+            <div class="commands-grid">
+                <div class="command-category">
+                    <h3><i class="fas fa-music"></i> Podstawowe</h3>
+                    <div class="command-list">
+                        <div class="command-item">
+                            <code>/radio</code>
+                            <span>Uruchamia radio na kanale głosowym</span>
+                        </div>
+                        <div class="command-item">
+                            <code>/stop</code>
+                            <span>Zatrzymuje radio i rozłącza bota</span>
+                        </div>
+                        <div class="command-item">
+                            <code>/refresh</code>
+                            <span>Odświeża połączenie (cooldown: 2 min)</span>
+                        </div>
+                        <div class="command-item">
+                            <code>/ping</code>
+                            <span>Sprawdza opóźnienie bota</span>
+                        </div>
+                        <div class="command-item">
+                            <code>/help</code>
+                            <span>Wyświetla listę wszystkich komend</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="command-category premium">
+                    <h3><i class="fas fa-crown"></i> Premium</h3>
+                    <div class="command-list">
+                        <div class="command-item">
+                            <code>/radio247</code>
+                            <span>Sesja radiowa 24/7 bez timeoutu</span>
+                        </div>
+                        <div class="command-item">
+                            <code>/refresh</code>
+                            <span>Krótszy cooldown (1 minuta)</span>
+                        </div>
+                        <div class="command-item">
+                            <code>/license</code>
+                            <span>Sprawdza status licencji Premium</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <section class="about">
         <div class="about-content">
-            <h2>O Radiu</h2>
-            <p>WojtotekaFM to wyjątkowe radio stworzone z myślą o społeczności Discord. Oferujemy wysokiej jakości muzykę 24/7, 
-            idealne rozwiązanie dla każdego serwera Discord!</p>
+            <h2>Jak Działa System</h2>
+            <p>WojtotekaFM wykorzystuje zaawansowany globalny system audio, który pozwala na obsługę wielu serwerów jednocześnie przy minimalnym zużyciu zasobów. Bot automatycznie zarządza połączeniami, aktualizuje informacje o muzyce w czasie rzeczywistym i oferuje zaawansowane funkcje Premium.</p>
             <div class="music-visualizer">
                 <div class="bar"></div>
                 <div class="bar"></div>
@@ -55,15 +131,62 @@
                 <div class="bar"></div>
                 <div class="bar"></div>
             </div>
+            <div class="stream-info">
+                <h3>🎵 Radio WojtotekaFM</h3>
+                <p><strong>Strumień:</strong> https://radio.wojtoteka.ovh/</p>
+                <p><strong>Jakość:</strong> 256kbps • <strong>Dostępność:</strong> 24/7</p>
+            </div>
         </div>
     </section>
     
+    <section class="premium-features">
+        <div class="premium-content">
+            <h2><i class="fas fa-crown"></i> Funkcje Premium</h2>
+            <div class="premium-grid">
+                <div class="premium-card">
+                    <div class="premium-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Inteligentne Kanały</h3>
+                    <p>Bot automatycznie znajduje kanał tekstowy powiązany z kanałem głosowym i wysyła tam aktualizacje</p>
+                </div>
+                <div class="premium-card">
+                    <div class="premium-icon">
+                        <i class="fas fa-infinity"></i>
+                    </div>
+                    <h3>Tryb 24/7</h3>
+                    <p>Sesje radiowe bez timeoutu bezczynności - bot pozostaje nawet gdy nie ma użytkowników</p>
+                </div>
+                <div class="premium-card">
+                    <div class="premium-icon">
+                        <i class="fas fa-redo-alt"></i>
+                    </div>
+                    <h3>Auto-Reconnect</h3>
+                    <p>Gwarantowane przywracanie sesji po restarcie bota z zachowaniem wszystkich ustawień</p>
+                </div>
+                <div class="premium-card">
+                    <div class="premium-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3>Krótsze Cooldowny</h3>
+                    <p>Komenda /refresh dostępna co 1 minutę zamiast 2 minut dla zwykłych użytkowników</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="stats">
+        <h2>Statystyki Systemu</h2>
         <div class="stats-grid">
             <div class="stat-card">
                 <i class="fas fa-server"></i>
                 <h3>Serwery</h3>
                 <p class="counter">50+</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-users"></i>
+                <h3>Globalny Odtwarzacz</h3>
+                <p>1 strumień</p>
             </div>
             <div class="stat-card">
                 <i class="fas fa-clock"></i>
@@ -72,14 +195,24 @@
             </div>
             <div class="stat-card">
                 <i class="fas fa-broadcast-tower"></i>
-                <h3>Jakość</h3>
+                <h3>Jakość Audio</h3>
                 <p>256kbps</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-sync"></i>
+                <h3>Aktualizacje</h3>
+                <p>Co 15s</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Stabilność</h3>
+                <p>99.9%</p>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>Stworzone przez <a href="https://wojtoteka.ovh/">Wojtoteka_</a> <a href="https://discord.com/users/1328758394588500024" class="discord-link"><i class="fab fa-discord"></i> Kontakt z Dev</a></p>
+        <p>Stworzone przez <a href="https://wojtoteka.ovh/">Wojtoteka_</a> • Profesjonalny bot radiowy dla Discord</p>
     </footer>
     <script src="script.js"></script>
 </body>
